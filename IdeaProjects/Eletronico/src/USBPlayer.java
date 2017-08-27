@@ -15,14 +15,14 @@ public class USBPlayer extends Player{
         for (Musicas x:m)
             musicas.add(x);
     }
-    @Override
+    //@Override
     public void avancarMusica(){
         i++;
         if (i > musicas.size()) i = 1;
         musicas.get(i);
         System.out.println(i);
     }
-    @Override
+    //@Override
     public void recuarMusica(){
         j++;
         if (j < 1) j = musicas.size();

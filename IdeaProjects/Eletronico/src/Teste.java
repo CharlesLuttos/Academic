@@ -14,14 +14,14 @@ public class Teste {
         }
         String artista1 = "Los Hermanos";
         CD cd = new CD("Bloco do eu sozinho",artista1,
-                                                             new Musicas("Todo carnaval tem seu fim",artista1,"Marcelo Camelo", 252),
-                                                             new Musicas("A flor",artista1,"Rodrigo amarante", 210),
-                                                             new Musicas("Retrato pra Iaia",artista1,"Marcelo Camelo", 282),
-                                                             new Musicas("Assim sera",artista1,"Marcelo Camelo", 194),
-                                                             new Musicas("Casa pre-fabricada",artista1,"Marcelo Camelo", 245)
-                                                             );
+         new Musicas("Todo carnaval tem seu fim",artista1,"Marcelo Camelo", 252),
+         new Musicas("A flor",artista1,"Rodrigo amarante", 210),
+         new Musicas("Retrato pra Iaia",artista1,"Marcelo Camelo", 282),
+         new Musicas("Assim sera",artista1,"Marcelo Camelo", 194),
+         new Musicas("Casa pre-fabricada",artista1,"Marcelo Camelo", 245)
+         );
 
-
+        /**
         xyz.funcao.ativarCDplayer();
         xyz.cdPlayer.colocarCD(cd);
         xyz.cdPlayer.play();
@@ -33,5 +33,7 @@ public class Teste {
         xyz.funcao.aumentarVolume();
         xyz.funcao.aumentarVolume();
         xyz.funcao.ativarUSBPlayer();
+        System.out.print(xyz.cdPlayer.classeChamadora());
+        */
     }
 }
