@@ -14,7 +14,7 @@ public class CD {
         String nome;
         String artista;
         String compositor;
-        Time tempo;
+        int tempo;
 
     }
 }
