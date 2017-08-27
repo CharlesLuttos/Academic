@@ -6,6 +6,8 @@ public class AparelhoSom extends Eletronico{
     private int volume;
     private String tipo;
     public Funcao funcao;
+    CDPlayer cdPlayer;
+    USBPlayer usbPlayer;
 
     public AparelhoSom(){
         funcao = new Funcao();
@@ -29,6 +31,7 @@ public class AparelhoSom extends Eletronico{
             if (volume < 0) volume = 0;
         }
         public String ativarCDplayer(){
+            cdPlayer = new CDPlayer();
             tipo = "Cd player";
             return "Player definido para "+tipo;
         }
@@ -37,6 +40,11 @@ public class AparelhoSom extends Eletronico{
             return "Player definido para "+tipo;
         }
         public String ativarRadio(){
+            tipo = "nulo";
+            return "Player definido para "+tipo;
+        }
+        public String ativarUSBPlayer(){
+            usbPlayer = new USBPlayer();
             tipo = "nulo";
             return "Player definido para "+tipo;
         }
