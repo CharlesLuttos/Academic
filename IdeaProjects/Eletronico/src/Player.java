@@ -2,49 +2,43 @@
  * Created by Charles Luttos on 23/08/17.
  */
 public class Player {
-    int tempo;
-    CDPlayer cdPlayer;
-    USBPlayer usbPlayer;
-    int a;
+    private int tempo;
+    int nrMusica;
+    CD cd;
+
     public Player(){
-        cdPlayer = new CDPlayer();
+
     }
 
     public void play() {
-        System.out.println("Executando a musica ");
+        nrMusica = 1;
+        System.out.printf("Executando a musica: %d %s \n", nrMusica, cd.musicas.get(nrMusica).nome);
     }
 
     public void stop(){
         System.out.println("Player parado");
     }
 
-    public String classeChamadora () {
-        Throwable thr = new Throwable();
-        thr.fillInStackTrace ();
-        StackTraceElement[] ste = thr.getStackTrace();
-        return ste [2].getClassName();
-    }
-
     public void avancarMusica(){
-        if (getClass() == cdPlayer.getClass()){
-            a++;
-            if (a > ((CDPlayer) this).cdPlayer.cd.musicas.size()) a = ((CDPlayer) this).cdPlayer.cd.musicas.size();
-            ((CDPlayer) this).cdPlayer.cd.musicas.get(a);
-            System.out.printf("%d %s %s",a,((CDPlayer) this).cdPlayer.cd.musicas.get(a).nome,((CDPlayer) this).cdPlayer.cd.musicas.get(a).artista);
-        }
-        if (getClass() == usbPlayer.getClass()){
-
-        }
+        nrMusica++;
+        if (nrMusica > cd.musicas.size()) nrMusica = cd.musicas.size();
+        System.out.printf("%s %s %s \n",nrMusica, cd.musicas.get(nrMusica).nome, cd.musicas.get(nrMusica).artista);
     }
-    public void recuarMusica(Player player) {
-        if (player.getClass() == cdPlayer.getClass()) {
-            a--;
-            if (a < 0) a = ((CDPlayer) player).cdPlayer.cd.musicas.size();
-            ((CDPlayer) player).cdPlayer.cd.musicas.get(a);
-            System.out.printf("%d %s %s", a, ((CDPlayer) player).cdPlayer.cd.musicas.get(a).nome, ((CDPlayer) player).cdPlayer.cd.musicas.get(a).artista);
-        }
-        if (player.getClass() == usbPlayer.getClass()){
+    public void recuarMusica() {
+        nrMusica--;
+        if (nrMusica < 1) nrMusica = 1;
+        System.out.printf("%s %s %s \n",nrMusica, cd.musicas.get(nrMusica).nome, cd.musicas.get(nrMusica).artista);
+    }
 
+    public static class CDPlayer extends Player{
+        public void colocarCD(CD x){
+            cd = x;
+            System.out.printf("Foi colocado o cd de %s \n",x.artista);
+        }
+
+        public void tirarCD(){
+            System.out.printf("Foi tirado o cd de %s \n",cd.artista);
+            cd = null;
         }
     }
 }

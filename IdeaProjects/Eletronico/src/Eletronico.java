@@ -8,10 +8,12 @@ public class Eletronico {
 
     public void ligar(){
         ligado = true;
+        System.out.println("Inicializando...");
     }
 
     public void desligar(){
         ligado = false;
+        System.out.println("Até mais");
     }
 
     public String getMarca() {
