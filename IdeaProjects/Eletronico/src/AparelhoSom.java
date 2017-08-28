@@ -16,6 +16,12 @@ public class AparelhoSom extends Eletronico{
         volume = 0;
     }
 
+    public AparelhoSom(String marca){
+        funcao = new Funcao();
+        volume = 0;
+        setMarca(marca);
+    }
+
     public int getPotencia() {
         return potencia;
     }
